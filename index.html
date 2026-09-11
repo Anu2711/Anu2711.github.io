@@ -22,7 +22,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- non-blocking font stylesheet: fetches in parallel with everything else, swaps in
+     once ready. Same fonts, same weights — just doesn't hold up first paint. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=DM+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -56,7 +60,7 @@
     </div>
     <div class="hero-graph">
       <div class="graph-caption mono"><span><span class="dot"></span>active</span><span>drag a node · the stack, as a graph</span></div>
-      <canvas id="net" aria-label="An animated network graph of Anusha's technical stack"></canvas>
+      <canvas id="net" role="img" tabindex="0" aria-label="An animated network graph of Anusha's technical stack. Interactive with a mouse or touch; decorative for keyboard users."></canvas>
       <span class="axis-y mono">stack</span>
       <span class="ann hero-ann"><svg viewBox="0 0 60 44"><path d="M4 40 C 18 36, 34 28, 54 6 M44 8 l11 -3 -2 11"/></svg>the stack, as a graph. drag a node.</span>
     </div>

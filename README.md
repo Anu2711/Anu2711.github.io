@@ -58,6 +58,31 @@ See `CLAUDE.md` for the full design and engineering context. Short version:
 - `assets/logos/` — empty except a README describing where to source each company's
   official mark. Every job currently falls back to a live favicon via `domain`.
 
+## Quality floor (Phase 4)
+
+- **Responsive**: checked at 380/700/900/1280/1600px. Fixed a real bug — the nav
+  overflowed horizontally below ~640px (brand text wrapped, "Contact"/"Resume" got
+  pushed off-screen). It now stacks (brand row, then a wrapping link row) under 640px.
+  Confirmed the hero graph is hidden ≤700px and annotations collapse to inline text
+  ≤900px, per the CSS already in place.
+- **Keyboard**: every link is reachable and shows the signal-purple focus ring. Found and
+  fixed a gap — the hero graph `<canvas>` wasn't in the tab order at all (canvas isn't
+  natively focusable, and `:focus-visible` didn't target it). Added `tabindex="0"`,
+  `role="img"`, an aria-label noting it's decorative for keyboard users, and included
+  `canvas` in the focus-visible outline rule.
+- **Lighthouse**: served over a real static server (not `python -m http.server`, which
+  is single-threaded and adds its own latency). Accessibility, Best Practices, and SEO
+  score **100** consistently. Performance was 84 initially — the Google Fonts stylesheet
+  was render-blocking, holding up first paint on a round trip to `fonts.googleapis.com`.
+  Switched it to the standard preload-and-swap pattern (`media="print" onload="this.media='all'"`
+  with a `<noscript>` fallback) — same fonts, same weights, nothing visual changes, it just
+  stops blocking. That took Performance to 89–100 across repeated runs in this sandbox
+  (network jitter fetching the fonts accounts for the remaining spread); the fonts
+  themselves are the one heavy asset CLAUDE.md already accounts for. **If you want a
+  guaranteed stable 95+**, the next step is self-hosting the three font files in
+  `assets/fonts/` instead of the Google Fonts CDN — that's a bigger call (drops the CDN
+  dependency) so I left it as an option rather than doing it unprompted.
+
 ## Before launch
 
 Remaining bracketed placeholders (`grep -rn '\[' data/`):
