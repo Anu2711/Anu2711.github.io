@@ -11,8 +11,7 @@ const PHOTO = null;
 const ph = document.getElementById("photo");
 if(PHOTO){ ph.innerHTML=`<img src="${PHOTO}" alt="Anusha Raisinghani">`; } else { ph.classList.add("empty"); ph.textContent="photo"; }
 
-// About: stack with logos
-const INK_HEX = getComputedStyle(document.documentElement).getPropertyValue("--ink").trim().replace("#","");
+// About: stack with logos, downloaded from Simple Icons into assets/icons/
 document.getElementById("stack").append(...STACK.map(g => {
   const d = el("div","stack-group");
   d.append(el("h3",null,g.name));
@@ -24,8 +23,8 @@ document.getElementById("stack").append(...STACK.map(g => {
     if(slug){
       const ink=new Image(), brand=new Image();
       ink.className="ink"; brand.className="brand"; ink.alt=name; brand.alt=""; ink.loading=brand.loading="lazy";
-      ink.src=`https://cdn.simpleicons.org/${slug}/${INK_HEX}`;   // tinted to the palette at rest
-      brand.src=`https://cdn.simpleicons.org/${slug}`;            // the tool's own colour on hover
+      ink.src=`assets/icons/${slug}-ink.svg`;     // tinted to the palette at rest
+      brand.src=`assets/icons/${slug}-brand.svg`; // the tool's own colour on hover
       ink.onerror=monogram; box.append(ink,brand);
     } else monogram();
     t.append(box, el("span","name",name)); row.append(t);

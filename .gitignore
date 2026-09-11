@@ -1,2 +1,5 @@
 .DS_Store
 *.log
+
+# canonical copy lives at assets/resume.pdf
+/Resume 2026.pdf
