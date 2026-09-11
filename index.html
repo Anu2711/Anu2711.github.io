@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anusha Raisinghani — Analytics Engineer, Dubai</title>
+<meta name="description" content="Anusha Raisinghani is an analytics engineer in Dubai fintech, building data pipelines, models, and the dashboards that make them useful. UAE Golden Visa holder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#top">Anusha Raisinghani</a>
+    <ul>
+      <li><a class="u" href="#work">Work</a></li>
+      <li><a class="u" href="#projects">Projects</a></li>
+      <li><a class="u" href="#stack-section">Stack</a></li>
+      <li><a class="u" href="#notes">Notes</a></li>
+      <li><a class="u" href="#contact">Contact</a></li>
+      <li><a class="u" href="assets/resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap grid">
+    <div class="hero-text">
+      <p class="hero-hi">Hi, I'm Anusha Raisinghani.</p>
+      <h1>
+        <span class="l"><span>Data Scientist</span></span>
+        <span class="l"><span><em>and</em> Engineer</span></span>
+      </h1>
+      <div class="cards hero-cards" id="hero-cards"></div>
+    </div>
+    <div class="hero-graph">
+      <div class="graph-caption mono"><span><span class="dot"></span>active</span><span>drag a node · the stack, as a graph</span></div>
+      <canvas id="net" aria-label="An animated network graph of Anusha's technical stack"></canvas>
+      <span class="axis-y mono">stack</span>
+      <span class="ann hero-ann"><svg viewBox="0 0 60 44"><path d="M4 40 C 18 36, 34 28, 54 6 M44 8 l11 -3 -2 11"/></svg>the stack, as a graph. drag a node.</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap grid">
+    <div class="sec-head">
+      <h2>About</h2>
+      <p>What I actually do all day.</p>
+      <div class="photo" id="photo"></div>
+    </div>
+    <div class="sec-body">
+      <span class="ann about-ann">the short version</span>
+      <p class="about-lede">I sit between the warehouse and the people who need answers from it — modelling the data, shipping the pipelines, and building the dashboards that let a team stop asking me the same question twice. I like problems with a number attached.</p>
+      <p class="about-more">Most of my work has been the unglamorous middle: dbt models, Airflow DAGs, Snowflake permissions — and then the recommendation engine or dashboard that only works because that layer is solid.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="work">
+  <div class="wrap grid">
+    <div class="sec-head">
+      <h2>Work</h2>
+      <p>Full-time and co-op, most recent first.</p>
+      <p class="count" id="count-work"></p>
+    </div>
+    <div class="sec-body">
+      <div class="cards work-cards" id="work-cards"></div>
+      <div class="xp" id="xp"><div class="rail"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap grid">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p>Side work, competitions, and tools I wanted to exist.</p>
+      <p class="count" id="count-projects"></p>
+    </div>
+    <div class="sec-body">
+      <span class="ann proj-ann">hover a card, the line redraws</span>
+      <div class="projects" id="projects-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack-section">
+  <div class="wrap grid">
+    <div class="sec-head">
+      <h2>Stack</h2>
+      <p>What I reach for, grouped by where it sits in the pipeline.</p>
+      <p class="count" id="count-stack"></p>
+    </div>
+    <div class="sec-body">
+      <div class="stack" id="stack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOTES ================= -->
+<section id="notes">
+  <div class="wrap grid">
+    <div class="sec-head">
+      <h2>Notes</h2>
+      <p>Short write-ups on things I've built or broken.</p>
+    </div>
+    <div class="sec-body" id="notes-body"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CONTACT ================= -->
+<footer id="contact">
+  <div class="wrap">
+    <p class="contact-lede">Working on something with a lot of data and not enough answers? <a href="mailto:araising@uwaterloo.ca">Write to me.</a></p>
+    <div class="contact-links">
+      <a class="u" href="mailto:araising@uwaterloo.ca">araising@uwaterloo.ca</a>
+      <a class="u" href="https://www.linkedin.com/in/anusha-raisinghani2711/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="u" href="https://github.com/Anu2711" target="_blank" rel="noopener">GitHub</a>
+      <a class="u" href="assets/resume.pdf">Resume (PDF)</a>
+    </div>
+    <div class="colophon">
+      <span>Anusha Raisinghani, 2026</span>
+      <span>Last updated September 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data/facts.js"></script>
+<script src="data/stack.js"></script>
+<script src="data/experience.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/notes.js"></script>
+<script src="data/graph.js"></script>
+<script src="js/render.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/rail.js"></script>
+<script src="js/graph.js"></script>
+</body>
+</html>

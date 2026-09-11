@@ -1,0 +1,23 @@
+/* size: "wide" | "" | "narrow" — controls how the grid breaks symmetry */
+const PROJECTS = [
+  { size:"wide", title:"RAG for workout selection",
+    blurb:"End-to-end retrieval pipeline that ingests YouTube workout data and returns a session matched to your mood using vector similarity search.",
+    tags:["RAG","vector search","Python"], links:[["GitHub","[repo url]"]],
+    spark:[2,3,5,4,7,6,9,8,11,12] },
+  { size:"narrow", title:"Overleaf MCP integration",
+    blurb:"An MCP server that lets Claude read, write and compile Overleaf LaTeX projects from natural language.",
+    tags:["MCP","LaTeX","tooling"], links:[["GitHub","[repo url]"]] },
+  { size:"", title:"Disaster tweet classifier",
+    blurb:"DistilBERT fine-tuned on 10K tweets. Custom preprocessing and Hugging Face optimisation took it to an F1 of 0.82. Deployed as a live demo.",
+    tags:["NLP","DistilBERT","Hugging Face"], links:[["GitHub","[repo url]"],["Live demo","[demo url]"]],
+    spark:[3,4,4,6,7,9,9,10,12,13] },
+  { size:"", title:"Fashion category classifier",
+    blurb:"Multi-modal model over text, image and categorical features, classifying 27 fashion categories at 88% accuracy in a Kaggle competition.",
+    tags:["multi-modal","Kaggle","PyTorch"], links:[["GitHub","[repo url]"]] },
+  { size:"narrow", title:"Housing prices in R",
+    blurb:"Random Forest against GAM on the Kaggle housing dataset. RF cut RMSE by 18% over baseline.",
+    tags:["R","Random Forest","GAM"], links:[["GitHub","[repo url]"]] },
+  { size:"wide", title:"E-leet Coding",
+    blurb:"Founded a weekly interview-prep series as VP of Events for the Data Science Club at Waterloo. Around 20 students a session.",
+    tags:["leadership","teaching"], links:[] },
+];
