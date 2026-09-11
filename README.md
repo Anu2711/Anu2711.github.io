@@ -13,7 +13,8 @@ js/reveal.js          scroll-triggered reveal (annotations, metric count-up)
 js/rail.js             scroll-linked experience rail
 js/graph.js            hero force graph
 data/*.js              content — edit these to update the site
-posts/                  one .html per note
+posts/_template.html   copy this to publish a note (see "Adding content")
+posts/<slug>.html      one file per published note
 assets/                 resume, icons, logos, og-image, favicon
 ```
 
@@ -34,7 +35,11 @@ See `CLAUDE.md` for the full design and engineering context. Short version:
 
 - **Project** → push an object to `data/projects.js`.
 - **Job** → push an object to `data/experience.js`.
-- **Note** → push an object to `data/notes.js` and add `posts/<slug>.html`.
+- **Note** → copy `posts/_template.html` to `posts/<slug>.html`, fill in the title,
+  description, date and body, then push `{ date:"YYYY-MM", title, blurb, href:"posts/<slug>.html" }`
+  to `data/notes.js`. The template already carries the nav, `site.css`, and a back link
+  to `/#notes` — nothing else to wire up. `NOTES` empty renders the "nothing published
+  yet" invitation state on the homepage; the first entry replaces it automatically.
 - **Graph node** → add to `data/graph.js`, with at least one link.
 
 ## Assets
@@ -60,7 +65,6 @@ Remaining bracketed placeholders (`grep -rn '\[' data/`):
 - `data/facts.js` — the `availability` card
 - `data/experience.js` — `EXPERIENCE[0].bullets` (Stake role)
 - `data/projects.js` — every `[repo url]` and the `[demo url]` on the tweet classifier
-- `PHOTO` in `js/render.js` — set to `assets/photo.jpg` once the file exists
 - Company marks — `assets/logos/*.svg` for Stake, Network International, Babylist,
   RideCo, WAT.ai, SAP (see `assets/logos/README.md`); set `logo` per job once added
 - `og:url` / `og:image` in `index.html` assume `https://anu2711.github.io/` — update
