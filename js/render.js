@@ -6,8 +6,8 @@ const el = (tag, cls, html) => { const n=document.createElement(tag); if(cls) n.
 // Shared across render.js, reveal.js, rail.js, graph.js
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// About: photo slot. Set PHOTO to "assets/photo.jpg" once the file exists.
-const PHOTO = null;
+// About: photo slot.
+const PHOTO = "assets/photo.jpg";
 const ph = document.getElementById("photo");
 if(PHOTO){ ph.innerHTML=`<img src="${PHOTO}" alt="Anusha Raisinghani">`; } else { ph.classList.add("empty"); ph.textContent="photo"; }
 
