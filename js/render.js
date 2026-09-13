@@ -32,20 +32,28 @@ document.getElementById("stack").append(...STACK.map(g => {
   d.append(row); return d;
 }));
 
+// Years-of-experience helpers — shared by the hero "experience" card and the work cards,
+// so the two stay in sync as roles are added.
+const months = (a,b) => { const [y1,m1]=a.split("-").map(Number); const [y2,m2]=(b||new Date().toISOString().slice(0,7)).split("-").map(Number); return (y2-y1)*12+(m2-m1); };
+const yoe = t => Math.round(EXPERIENCE.filter(j=>j.type===t).reduce((n,j)=>n+months(j.start,j.end),0)/12*2)/2;
+const FULL_YOE = yoe("full"), COOP_YOE = yoe("coop");
+
 // Hero callout cards
-document.getElementById("hero-cards").append(...FACTS.map((f,i)=>{
+const HERO_FACTS = [...FACTS, {
+  k:"experience", v:`${FULL_YOE + COOP_YOE} yrs`,
+  s:`${FULL_YOE} yrs full-time, ${COOP_YOE} yrs co-op`,
+}];
+document.getElementById("hero-cards").append(...HERO_FACTS.map((f,i)=>{
   const c = el("div","card"); c.style.setProperty("--d",(600+i*70)+"ms");
   c.innerHTML = `<span class="k">${f.k}</span><span class="v${f.todo?" todo":""}">${f.v}</span>${f.s?`<span class="s">${f.s}</span>`:""}`;
   return c;
 }));
 
 // Work callout cards — years computed from role dates, so they stay right as roles are added
-const months = (a,b) => { const [y1,m1]=a.split("-").map(Number); const [y2,m2]=(b||new Date().toISOString().slice(0,7)).split("-").map(Number); return (y2-y1)*12+(m2-m1); };
-const yoe = t => Math.round(EXPERIENCE.filter(j=>j.type===t).reduce((n,j)=>n+months(j.start,j.end),0)/12*2)/2;
 const companies = new Set(EXPERIENCE.filter(j=>j.type!=="other").map(j=>j.company)).size;
 const WORK_CARDS = [
-  { k:"full-time",  v:`${yoe("full")} yrs`, s:"data science and analytics engineering", big:true },
-  { k:"co-op",      v:`${yoe("coop")} yrs`, s:"data engineering and modelling", big:true },
+  { k:"full-time",  v:`${FULL_YOE} yrs`, s:"data science and analytics engineering", big:true },
+  { k:"co-op",      v:`${COOP_YOE} yrs`, s:"data engineering and modelling", big:true },
   { k:"companies",  v:`${companies}`,      s:"fintech, e-commerce, transit, enterprise software" },
 ];
 document.getElementById("work-cards").append(...WORK_CARDS.map((f,i)=>{
