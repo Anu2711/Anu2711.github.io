@@ -85,3 +85,10 @@ static site described in `CLAUDE.md`. One entry per phase; updated as phases com
   an optional follow-up rather than doing it unprompted, since CLAUDE.md already treats
   the fonts as the one accepted heavy asset.
 - Added this file (`claude-code-changes.md`) as a running per-phase change log.
+
+## Content update (ad hoc, after Phase 4)
+
+- `data/projects.js`: every `[repo url]`/`[demo url]` placeholder replaced with real
+  GitHub/Streamlit links (user-provided edit).
+- `data/experience.js`: the Stake placeholder bullet commented out rather than deleted,
+  leaving that role with no bullets until there's something concrete to report.

@@ -88,8 +88,7 @@ See `CLAUDE.md` for the full design and engineering context. Short version:
 Remaining bracketed placeholders (`grep -rn '\[' data/`):
 
 - `data/facts.js` — the `availability` card
-- `data/experience.js` — `EXPERIENCE[0].bullets` (Stake role)
-- `data/projects.js` — every `[repo url]` and the `[demo url]` on the tweet classifier
+- `data/experience.js` — `EXPERIENCE[0].bullets` (Stake role) — commented out for now
 - Company marks — `assets/logos/*.svg` for Stake, Network International, Babylist,
   RideCo, WAT.ai, SAP (see `assets/logos/README.md`); set `logo` per job once added
 - `og:url` / `og:image` in `index.html` assume `https://anu2711.github.io/` — update
