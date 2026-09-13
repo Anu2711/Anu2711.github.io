@@ -7,7 +7,7 @@ const EXPERIENCE = [
     year:"2026", range:"Sept 2026 – present", current:true, start:"2026-09", end:null, type:"full",
     role:"Analytics Engineer", company:"Stake", domain:"getstake.com",
     bullets:[
-      "[What you're building at Stake — add one or two bullets once there's something concrete to say.]",
+      // "[What you're building at Stake — add one or two bullets once there's something concrete to say.]",
     ],
     metrics:[],
   },

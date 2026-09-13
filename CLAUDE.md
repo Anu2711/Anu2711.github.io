@@ -12,14 +12,14 @@ stays typographic and restrained.
 
 **Tokens** (in `:root` of the stylesheet):
 
-| token | value | role |
-|---|---|---|
-| `--paper` | `#F4F2F9` | lilac-tinted page background with a faint page-wide plotting grid |
-| `--paper-2` | `#E9E4F3` | lavender wash for hover states and chips |
-| `--ink` | `#231C3D` | text, nodes. Deep violet, not tinted black |
-| `--signal` | `#6A4FD6` | the one saturated purple: links, metrics, annotations, active edges |
-| `--trace` | `#A9A1C4` | hairlines, ticks, secondary labels |
-| `--amber` | `#F0A31F` | firing nodes in the graph **only**. Never UI chrome |
+| token       | value     | role                                                                |
+| ----------- | --------- | ------------------------------------------------------------------- |
+| `--paper`   | `#F4F2F9` | lilac-tinted page background with a faint page-wide plotting grid   |
+| `--paper-2` | `#E9E4F3` | lavender wash for hover states and chips                            |
+| `--ink`     | `#231C3D` | text, nodes. Deep violet, not tinted black                          |
+| `--signal`  | `#6A4FD6` | the one saturated purple: links, metrics, annotations, active edges |
+| `--trace`   | `#A9A1C4` | hairlines, ticks, secondary labels                                  |
+| `--amber`   | `#F0A31F` | firing nodes in the graph **only**. Never UI chrome                 |
 
 **Type:** Caveat (handwritten — h1, h2, the "Write to me." link, and the `.ann` margin
 notes) Instrument Sans at `wdth 92` (h3, body, UI, contact lede) and DM Mono only where numbers
